@@ -1,0 +1,61 @@
+body{
+    margin: 0;
+    background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+    overflow-y: hidden;/*this helps you not to specify scroll on the right side of the screen*/
+}
+.night{
+    height: 80vh;/*vh stand for view port height*/
+    width: 70vw;/*vw stands for viewport width*/
+    /*border: 1px solid black;/*if you don't want the border than remove border property i'm leaving just for you guys*/
+    margin: 5rem auto;
+    background: url(./assets/Img_1.png);
+    background-size: cover;
+    position: relative;
+    box-shadow: 1px 2px 60px rgba(0, 0, 0, 0.4);/*this gives you light gray colour*/
+    overflow-x: hidden;/*anything inside in this container will not overflow  outside the container*/
+}
+.surface{
+    height: 140px;
+    width: 500%;
+    background: url('./assets/Img_02.png');/*this is your road image*/
+    display: block;
+    position: absolute;/*this will specify the road position where bottom is the property to fix it*/
+    bottom: 0%;
+    left: 0%;
+    background-repeat: repeat-x;/*as i want to repeat these image*/
+    /*animation: moveRight 6s linear infinite;/*this is used as js property so that when you press enter key the car and the road transition will stop and start so on*/
+}
+.car{
+    position: absolute;
+    bottom: 8%;/*This keeps the car to the height of 8 percent above the ground level so that you can see car moving on road*/
+    left: 24%;/*this keeps little forward from the start frame*/
+    /*animation: suspension 1s linear infinite ;/*if you don't want the functionality then open this property and remove from suspension class mentioned below down as class property that is used for js */
+}
+/*Animation*/
+@keyframes moveRight{
+    100%{
+        transform: translateX(-2950px);
+    }
+}
+/*The suspension helps you to  feel like you're driving the car it gives the motion of up and down */
+@keyframes suspension{
+    100%{
+        transform: translateY(-1px);
+    }
+    50%{
+        transform: translateY(2px);
+    }
+    0%{
+        transform: translateY(-1px);
+    }
+}
+/*This is it guys 
+so now if you want it functioned like to turn light off or on, on key pressed or to stop
+using keys you have to go through javascript i will mention the js file to*/
+.moveRight
+{
+    animation: moveRight 6s linear infinite;
+}
+.suspension{
+    animation: suspension 1s linear infinite;
+}
